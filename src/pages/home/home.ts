@@ -7,13 +7,43 @@ import {NewPage} from '../new/new';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  results: {
+    "image": string;  
+  }[];
 
   constructor(public navCtrl: NavController) {
-
+     this.navCtrl = navCtrl;
+     this.results = this.getResults();
   }
-onLoadNewPage()
+onLoadNewPage(imagedata,index)
 {
-  console.log("onLoadNewPage");
-  this.navCtrl.push(NewPage)
+  // console.log("onLoadNewPage");
+  let data={
+    image:imagedata.image,
+    index:index
+  }
+  this.navCtrl.push(NewPage,data)
 }
+
+getResults() {
+      return [
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},        
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"},
+        {"image": "http://placehold.it/50x50"}
+      ];
+  }
 }

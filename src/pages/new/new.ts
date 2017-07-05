@@ -18,7 +18,7 @@ export class NewPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewPage');
+    console.log('ionViewDidLoad NewPage',this.navParams.get('image'));
   }
 
 }

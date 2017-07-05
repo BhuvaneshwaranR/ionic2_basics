@@ -1,11 +1,36 @@
 <ion-header>
   <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onLoadNewPage()">
+        <ion-icon name="add" ></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       Ionic Example
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <button (click)="onLoadNewPage()" ion-button>New Page</button>
+<ion-content>
+  <!--<button (click)="onLoadNewPage()" ion-button>New Page</button>-->
+
+<ion-grid >
+  <ion-row *ngFor="let result of results;let i = index">
+    <ion-col width-25  (click)="onLoadNewPage(result)" ><img [src]="results[i].image"/></ion-col>
+     <ion-col width-25 (click)="onLoadNewPage(result)"><img [src]="results[i].image"/></ion-col>
+      <ion-col width-25 (click)="onLoadNewPage(result)"><img [src]="results[i].image"/></ion-col>
+       <ion-col width-25 (click)="onLoadNewPage(result)"><img [src]="results[i].image"/></ion-col>    
+  </ion-row>
+</ion-grid>
+
+
 </ion-content>
+
+ <!--
+   <ion-row *ngFor="let result of results;let i = index" [ngIf]="i%4 === 0">
+    <ion-col width-25 [ngIf]="i<results.length"><img [src]="results[i].image"/></ion-col>
+     <ion-col width-25 [ngIf]="i+1<results.length"><img [src]="results[i+1].image"/></ion-col>
+      <ion-col width-25 [ngIf]="i+2<results.length"><img [src]="results[i+2].image"/></ion-col>
+       <ion-col width-25 [ngIf]="i+3<results.length"><img [src]="results[i+3].image"/></ion-col>
+  </ion-row>
+  -->
