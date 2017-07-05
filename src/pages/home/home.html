@@ -1,10 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons end>
+    <!--<ion-buttons end>
       <button ion-button icon-only (click)="onLoadNewPage()">
         <ion-icon name="add" ></ion-icon>
       </button>
-    </ion-buttons>
+    </ion-buttons>-->
     <ion-title>
       Ionic Example
     </ion-title>
@@ -16,10 +16,10 @@
 
 <ion-grid >
   <ion-row *ngFor="let result of results;let i = index">
-    <ion-col width-25  (click)="onLoadNewPage(result)" ><img [src]="results[i].image"/></ion-col>
-     <ion-col width-25 (click)="onLoadNewPage(result)"><img [src]="results[i].image"/></ion-col>
-      <ion-col width-25 (click)="onLoadNewPage(result)"><img [src]="results[i].image"/></ion-col>
-       <ion-col width-25 (click)="onLoadNewPage(result)"><img [src]="results[i].image"/></ion-col>    
+    <ion-col width-25  (click)="onLoadNewPage(result,i)" ><img [src]="results[i].image"/></ion-col>
+     <ion-col width-25 (click)="onLoadNewPage(result,i)"><img [src]="results[i].image"/></ion-col>
+      <ion-col width-25 (click)="onLoadNewPage(result,i)"><img [src]="results[i].image"/></ion-col>
+       <ion-col width-25 (click)="onLoadNewPage(result,i)"><img [src]="results[i].image"/></ion-col>    
   </ion-row>
 </ion-grid>
 

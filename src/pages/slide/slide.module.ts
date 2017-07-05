@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { NewPage } from './new';
+import { SlidePage } from './slide';
 
 @NgModule({
   declarations: [
-    NewPage,
+    SlidePage,
   ],
   imports: [
-    IonicPageModule.forChild(NewPage),
+    IonicPageModule.forChild(SlidePage),
   ],
   exports: [
-    NewPage
+    SlidePage
   ]
 })
-export class NewPageModule {}
+export class SlidePageModule {}

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {NewPage} from '../new/new';
+import {SlidePage} from '../slide/slide';
 
 @Component({
   selector: 'page-home',
@@ -17,12 +17,11 @@ export class HomePage {
   }
 onLoadNewPage(imagedata,index)
 {
-  // console.log("onLoadNewPage");
   let data={
     image:imagedata.image,
     index:index
   }
-  this.navCtrl.push(NewPage,data)
+  this.navCtrl.push(SlidePage,data)
 }
 
 getResults() {
