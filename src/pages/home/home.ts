@@ -1,48 +1,34 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {SlidePage} from '../slide/slide';
+import { exportJsonService } from '../service';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [exportJsonService]
 })
 export class HomePage {
+  myjsondata: any;
   results: {
     "image": string;  
   }[];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private exportJson: exportJsonService) {
      this.navCtrl = navCtrl;
-     this.results = this.getResults();
+     //call service for get json data
+     this.exportJson.getData().subscribe((data) => {
+       this.results = data;
+      });
   }
 onLoadNewPage(imagedata,index)
 {
-  let data={
-    image:imagedata.image,
+  let data={   
     index:index
   }
+  console.log("index",index);
   this.navCtrl.push(SlidePage,data)
 }
 
-getResults() {
-      return [
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},        
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"},
-        {"image": "http://placehold.it/50x50"}
-      ];
-  }
+
 }

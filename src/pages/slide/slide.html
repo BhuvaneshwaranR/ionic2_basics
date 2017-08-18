@@ -2,19 +2,13 @@
 <ion-header>
 
   <ion-navbar>
-     <!--<button  (click)="goToHome()" icon-only start>
-      <ion-icon name="home"></ion-icon>
-    </button>-->
-    <ion-title>slide</ion-title>
-   
+    <ion-title>slide</ion-title>   
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content>
 <ion-content>
-  <ion-slides  (ionSlideDidChange)="slideChanged()">
+  <ion-slides   (ionSlideDidChange)="slideChanged($event)">
   <ion-slide *ngFor="let image of image_array">
       <img [src]="image.image"/>
   </ion-slide>
