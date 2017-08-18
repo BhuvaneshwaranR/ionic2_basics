@@ -42,6 +42,8 @@ ionViewWillEnter() {
   slideChanged() {
     let currentIndex = this.slides.getActiveIndex();
     // console.log('Current index is', currentIndex);
+   console.log("is start", this.slides.isBeginning())
+   console.log("is last", this.slides.isEnd())
   }
 
 }
