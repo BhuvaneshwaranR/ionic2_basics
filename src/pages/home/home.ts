@@ -24,6 +24,7 @@ export class HomePage {
 onLoadNewPage(imagedata,index)
 {
   let data={   
+    img_arr:this.results,
     index:index
   }
   console.log("index",index);

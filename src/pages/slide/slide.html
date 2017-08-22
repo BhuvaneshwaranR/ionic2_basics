@@ -8,7 +8,8 @@
 
 <ion-content>
 <ion-content>
-  <ion-slides   (ionSlideDidChange)="slideChanged($event)">
+  <ion-slides initialSlide="{{selectId}}" (ionSlideDidChange)="slideChanged($event)"> 
+     <!-- [initialSlide]="_slideOptions"  -->
   <ion-slide *ngFor="let image of image_array">
       <img [src]="image.image"/>
   </ion-slide>

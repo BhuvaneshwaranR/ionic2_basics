@@ -1,49 +1,24 @@
-import { Component,ViewChild,ViewChildren,QueryList } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Slides } from 'ionic-angular';
-import { exportJsonService } from '../service';
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams,Slides } from 'ionic-angular';
 
 @IonicPage()
 @Component({
   selector: 'page-slide',
   templateUrl: 'slide.html',
-  providers: [exportJsonService]
 })
 export class SlidePage {
 
   @ViewChild(Slides) slides: Slides;
-  @ViewChildren(Slides) slideCollection: QueryList<Slides>;
-
+  selectId: number
   public imageindex;
   public arraylength;
   image_array:Array<any>=[];
-  constructor(public navCtrl: NavController, public navParams: NavParams, private exportJson: exportJsonService) {
-     //call service for get json data
-     this.exportJson.getData().subscribe((data) => {
-       this.image_array = data;
-       this.arraylength=data.length;
-      });
-  }
-
-   
-
-  // goToSlide() {
-  //   this.slides.slideTo(2, 500);
-  // }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NewPage',this.navParams.get('index'));
-    this.imageindex=this.navParams.get('index');  
-    // this.slides.slideTo(this.imageindex, 5); 
-  }
-
-ionViewDidEnter() {
-  // ionViewWillEnter(){
-  console.log("this.imageindex",this.imageindex)
-   this.slides.slideTo(this.imageindex, this.arraylength);
- }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-  goToHome(){
-    this.navCtrl.pop();
+ 
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+ 
+     this.image_array = this.navParams.get('img_arr');
+     this.arraylength=this.navParams.get('img_arr').length;
+     this.selectId = this.navParams.get('index');
   }
 
   slideChanged() {
