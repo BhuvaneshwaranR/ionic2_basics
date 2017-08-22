@@ -1,3 +1,21 @@
 page-slide {
-
+ ion-icon.icon.icon-md.ion-md-more {
+    font-size: 28px;
+    padding: 10px;
+    color: white;
+      }
+// img::after{
+//     background-image: url('assests/icon/favicon.ico');
+//     background-repeat: no-repeat;
+// }
+.prev{  
+    float: left;  
+    position: relative;
+    top: 76px;
+ }
+.next{
+    float: right;  
+    position: relative;
+    top: 76px;
+}
 }

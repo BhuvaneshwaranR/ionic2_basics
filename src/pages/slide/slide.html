@@ -1,8 +1,10 @@
 
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>slide</ion-title>   
+  <ion-navbar color="custom_teal">
+    <ion-title>Example Slide View</ion-title> 
+      <ion-buttons end>
+        <ion-icon name="more"></ion-icon>
+    </ion-buttons>  
   </ion-navbar>
 </ion-header>
 
@@ -11,8 +13,9 @@
   <ion-slides initialSlide="{{selectId}}" (ionSlideDidChange)="slideChanged($event)"> 
      <!-- [initialSlide]="_slideOptions"  -->
   <ion-slide *ngFor="let image of image_array">
-      <img [src]="image.image"/>
-  </ion-slide>
-  
+     <i class="ion-ios-arrow-back prev"></i>
+       <img  [src]="image.image"/>
+    <i class="ion-ios-arrow-forward next"></i>
+  </ion-slide>  
 </ion-slides>
 </ion-content>
